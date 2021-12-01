@@ -1,16 +1,16 @@
 # Could we also trigger an action to alert the Slack channel when a new project is being created?
-
 name: Repository Dispatch
 on:
   push:
       branches:
       - '*'
 jobs:
-  build:
+  test:
+    name: Test job
     runs-on: ubuntu-latest
-
     steps:
-        run: echo "Hey"
+      - name: Say hi
+        run: echo "hi"
 
   dispatch:
     needs: build
