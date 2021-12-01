@@ -19,4 +19,5 @@ jobs:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: new-project
-          client-payload: '{"message": "Hey William!!!", "project_name": "project-x"}'
+          client-payload: '{"message": "Hey William!!!", "project_name": "project-z"}'
+  
