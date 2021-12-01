@@ -17,7 +17,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        repo: ['WMBIII/dispatch-receiver-'] //Add more repos in later test
+        repo: ['WMBIII/dispatch-receiver-'] 
     runs-on: ubuntu-latest
     steps:
       - name: Repository Dispatch
