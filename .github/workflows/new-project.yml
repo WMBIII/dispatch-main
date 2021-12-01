@@ -1,6 +1,10 @@
 # Could we also trigger an action to alert the Slack channel when a new project is being created?
 
 name: Repository Dispatch
+on:
+  push:
+      branches:
+      - '*'
 uses: peter-evans/repository-dispatch@v1
 with:
   token: '${{ secrets.REPO_ACCESS_TOKEN }}'
