@@ -1,8 +1,26 @@
-name: hello-world
+# Could we also trigger an action to alert the Slack channel when a new project is being created?
+name: Repository Dispatch Test
 on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - name: First Step
+        run: echo "Hey William!"
+  dispatch:
+    strategy:
+        matrix:
+          repo: ['WMBIII/dispatch-receiver']
+      runs-on: ubuntu-latest
+      steps:
+        - name: Repository Dispatch
+          uses: peter-evans/repository-dispatch@v1
+          with:
+            token: ${{ secrets.REPO_ACCESS_TOKEN }}
+            repository: ${{ matrix.repo }}
+            event-type: new-project
+            client-payload: '{"message": "Hey William!!!"}'
+             
+
+
+    
