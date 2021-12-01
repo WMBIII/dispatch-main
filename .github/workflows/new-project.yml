@@ -10,7 +10,7 @@ jobs:
   dispatch:
     strategy:
         matrix:
-          repo: ['WMBIII/dispatch-receiver']
+          repo: ['WMBIII/dispatch-receiver-']
       runs-on: ubuntu-latest
       steps:
         - name: Repository Dispatch
@@ -20,7 +20,3 @@ jobs:
             repository: ${{ matrix.repo }}
             event-type: new-project
             client-payload: '{"message": "Hey William!!!"}'
-             
-
-
-    
